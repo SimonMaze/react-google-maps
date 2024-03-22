@@ -1,4 +1,4 @@
-import {useLayoutEffect} from 'react';
+import {useEffect} from 'react';
 
 export type DeckGlCompatProps = {
   /**
@@ -26,7 +26,7 @@ export function useDeckGLCameraUpdate(
   const {viewport, viewState} = props;
   const isDeckGlControlled = !!viewport;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!map || !viewState) return;
 
     const {
