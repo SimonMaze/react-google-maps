@@ -1,4 +1,4 @@
-import {useLayoutEffect} from 'react';
+import {useEffect} from 'react';
 import {CameraStateRef} from './use-tracked-camera-state-ref';
 import {toLatLngLiteral} from '../../libraries/lat-lng-utils';
 import {MapProps} from '../map';
@@ -33,7 +33,7 @@ export function useMapCameraParams(
   // (cameraStateRef, which is updated by all bounds_changed events) and the
   // desired state in the props.
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!map) return;
 
     const nextCamera: google.maps.CameraOptions = {};
