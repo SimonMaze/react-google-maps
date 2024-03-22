@@ -4,7 +4,6 @@ import React, {
   PropsWithChildren,
   useContext,
   useEffect,
-  useLayoutEffect,
   useMemo
 } from 'react';
 
@@ -149,7 +148,7 @@ export const Map = (props: PropsWithChildren<MapProps>) => {
   }, [lat, lng, props.zoom, props.heading, props.tilt]);
 
   // externally controlled mode: reject all camera changes that don't correspond to changes in props
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!map || !isControlledExternally) return;
 
     map.moveCamera(cameraOptions);
